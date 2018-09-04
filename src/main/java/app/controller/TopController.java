@@ -10,8 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class TopController
 {
     @RequestMapping("/")
-    @ResponseBody
     public String home() {
-        return "Hello, Spring Boot Sample Application!";
+        return "index.html";
     }
 }

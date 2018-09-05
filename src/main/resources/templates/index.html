@@ -1,23 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <title>ToDo List Sample</title>
 </head>
-<body>
-<form action="/" method="post">
-<form action="/" method="post">
+ <body>
+  <form action="/" method="post">
+   <div>
+     <p>ToDo</p>
+     <input type="text" name="todo" />
+   </div>
+   <div>
+     <p>personInCharge</p>
+     <input type="text" name="personInCharge" />
+   </div>
+   <input type="submit" />
+  </form>
   <div>
-    <p>ToDo</p>
-    <input type="text" name="todo" />
+    <ul>
+      <!--/*@thymesVar id="todo_list" type="java.util.List"*/-->
+      <li th:each="todo : ${todo_list}">
+        <td th:text="${todo.todo}"></td>
+        <td th:text="${todo.personInCharge}"></td>
+      </li>
+    </ul>
   </div>
-  <div>
-    <p>personInCharge</p>
-    <input type="text" name="personInCharge" />
-  </div>
-  <input type="submit" />
-</form>
-<div>
-</div>
-</body>
+ </body>
 </html>

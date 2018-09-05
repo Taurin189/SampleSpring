@@ -12,6 +12,14 @@ public class ToDoService {
     @Autowired
     ToDoRepository toDoRepository;
 
+    public void save(String todo, String personInCharge) {
+        ToDoEntity entity = new ToDoEntity();
+        entity.setTodo(todo);
+        entity.setPersonInCharge(personInCharge);
+        entity.setFinished(false);
+        save(entity);
+    }
+
     public void save(ToDoEntity entity) {
         toDoRepository.save(entity);
     }

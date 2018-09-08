@@ -12,7 +12,7 @@ import java.util.List;
 
 @Controller
 @EnableAutoConfiguration
-public class TopController
+public class ToDoController extends ExceptionHandleController
 {
     @Autowired
     ToDoService toDoService;
@@ -35,6 +35,14 @@ public class TopController
         mav.setViewName("index.html");
         List<ToDoEntity> entityList = toDoService.findAll();
         mav.addObject("todo_list", entityList);
+        return mav;
+    }
+
+    @GetMapping("/{id}")
+    public ModelAndView detail(@PathVariable int id, ModelAndView mav) {
+        mav.setViewName("detail.html");
+        ToDoEntity entity = toDoService.findById(id);
+        mav.addObject("todo", entity);
         return mav;
     }
 }

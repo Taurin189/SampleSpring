@@ -1,5 +1,6 @@
 package com.spring.sample.service;
 
+import com.spring.sample.Exception.NotFoundException;
 import com.spring.sample.entity.ToDoEntity;
 import com.spring.sample.repository.ToDoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,5 +29,9 @@ public class ToDoService {
 
     public List<ToDoEntity> findAll() {
         return toDoRepository.findAll();
+    }
+
+    public ToDoEntity findById(int id) {
+        return toDoRepository.findById(id).orElseThrow(NotFoundException::new);
     }
 }

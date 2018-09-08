@@ -2,13 +2,17 @@ package com.spring.sample.entity;
 
 import javax.persistence.*;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "todo")
 @Builder
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class ToDoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -18,4 +22,5 @@ public class ToDoEntity {
     String personInCharge;
     @Column(name = "is_finished")
     boolean isFinished;
+
 }

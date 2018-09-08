@@ -1,11 +1,13 @@
-package app.entity;
+package com.spring.sample.entity;
 
 import javax.persistence.*;
 
+import lombok.Builder;
 import lombok.Data;
 
 @Entity
 @Table(name = "todo")
+@Builder
 @Data
 public class ToDoEntity {
     @Id

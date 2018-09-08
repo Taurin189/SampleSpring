@@ -1,7 +1,7 @@
-package app.controller;
+package com.spring.sample.controller;
 
-import app.entity.ToDoEntity;
-import app.service.ToDoService;
+import com.spring.sample.entity.ToDoEntity;
+import com.spring.sample.service.ToDoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;

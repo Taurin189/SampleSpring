@@ -1,6 +1,6 @@
-package app.repository;
+package com.spring.sample.repository;
 
-import app.entity.ToDoEntity;
+import com.spring.sample.entity.ToDoEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ToDoRepository extends JpaRepository<ToDoEntity, Integer> {

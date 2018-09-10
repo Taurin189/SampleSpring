@@ -1,5 +1,6 @@
 package com.spring.sample;
 
+import com.spring.sample.Exception.NotFoundException;
 import com.spring.sample.entity.ToDoEntity;
 import com.spring.sample.repository.ToDoRepository;
 import com.spring.sample.service.ToDoService;
@@ -12,9 +13,12 @@ import org.mockito.MockitoAnnotations;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
+import static org.hamcrest.core.IsEqual.equalTo;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -90,5 +94,36 @@ public class ToDoServiceTest {
         assertEquals("Taurin189", actual.get(4).getPersonInCharge());
         assertEquals("第10回目Springの勉強する", actual.get(9).getTodo());
         assertEquals("Taurin189", actual.get(9).getPersonInCharge());
+    }
+
+    @Test
+    public void findByid() {
+        ToDoEntity toDoEntity = ToDoEntity.builder()
+                .id(1)
+                .todo("Springの勉強する")
+                .personInCharge("Taurin189")
+                .isFinished(false)
+                .build();
+
+        when(toDoRepository.findById(any(Integer.class))).thenReturn(Optional.of(toDoEntity));
+        ToDoEntity actual = toDoService.findById(1);
+
+        verify(toDoRepository, times(1)).findById(1);
+        assertEquals(new Integer(1), actual.getId());
+        assertEquals("Springの勉強する", actual.getTodo());
+        assertEquals("Taurin189", actual.getPersonInCharge());
+        assertFalse(actual.isFinished());
+    }
+
+    @Test
+    public void findByIdThroughNotFoundException() {
+
+        when(toDoRepository.findById(any(Integer.class))).thenReturn(Optional.empty());
+        try {
+            ToDoEntity actual = toDoService.findById(1);
+            verify(toDoRepository, times(1)).findById(1);
+        } catch (NotFoundException e) {
+            assertThat(e.getMessage(), equalTo("ID: 1 Not Found"));
+        }
     }
 }

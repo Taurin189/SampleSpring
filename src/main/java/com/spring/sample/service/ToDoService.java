@@ -32,6 +32,8 @@ public class ToDoService {
     }
 
     public ToDoEntity findById(int id) {
-        return toDoRepository.findById(id).orElseThrow(NotFoundException::new);
+        return toDoRepository.findById(id).orElseThrow(
+                () -> new NotFoundException("ID: " + String.valueOf(id) + " Not Found")
+        );
     }
 }

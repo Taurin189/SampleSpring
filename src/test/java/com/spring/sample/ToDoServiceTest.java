@@ -97,7 +97,7 @@ public class ToDoServiceTest {
     }
 
     @Test
-    public void findByid() {
+    public void findById() {
         ToDoEntity toDoEntity = ToDoEntity.builder()
                 .id(1)
                 .todo("Springの勉強する")

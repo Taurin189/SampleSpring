@@ -31,9 +31,6 @@ public class ToDoControllerTest {
     @Mock
     private ToDoService toDoService;
 
-    @Spy
-    private ExceptionHandleController exceptionHandleController;
-
     @InjectMocks
     private ToDoController toDoController;
 

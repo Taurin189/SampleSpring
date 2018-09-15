@@ -1,7 +1,6 @@
 package com.spring.sample;
 
 import com.spring.sample.Exception.NotFoundException;
-import com.spring.sample.controller.ExceptionHandleController;
 import com.spring.sample.controller.ToDoController;
 import com.spring.sample.entity.ToDoEntity;
 import com.spring.sample.service.ToDoService;
@@ -10,15 +9,9 @@ import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.mockito.Spy;
-import org.mockito.exceptions.misusing.MockitoConfigurationException;
 import org.springframework.http.HttpStatus;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.View;
-import org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -121,7 +114,6 @@ public class ToDoControllerTest {
 
         ModelAndView mav = new ModelAndView();
         ModelAndView actual = toDoController.detail(10, mav);
-        ModelMap modelMap = actual.getModelMap();
 
         assertEquals("error.html", actual.getViewName());
         assertEquals(HttpStatus.NOT_FOUND, actual.getStatus());

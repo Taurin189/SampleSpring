@@ -18,13 +18,13 @@ public class AuthController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("/")
+    @GetMapping("/login")
     public ModelAndView index(ModelAndView mav) {
         mav.setViewName("login.html");
         return mav;
     }
 
-    @PostMapping("/")
+    @PostMapping("/login")
     public ModelAndView post(
             ModelAndView mav,
             @RequestParam("username") String username,

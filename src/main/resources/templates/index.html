@@ -4,31 +4,46 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>ToDo List Sample</title>
-  <link rel="stylesheet" type="text/css" th:href="@{/static/bootstrap/css/bootstrap.min.css}"></link>
+  <link rel="stylesheet" type="text/css" th:href="@{/bootstrap/css/bootstrap.min.css}"></link>
 </head>
  <body>
-  <form action="/" method="post">
-   <div>
-     <p>ToDo</p>
-     <input type="text" name="todo" />
-   </div>
-   <div>
-     <p>personInCharge</p>
-     <input type="text" name="personInCharge" />
-   </div>
-   <input type="submit" />
-  </form>
-  <div>
-    <ul>
-      <!--/*@thymesVar id="todo_list" type="java.util.List"*/-->
-      <li th:each="todo : ${todo_list}">
-        <td th:text="${todo.todo}"></td>
-        <td th:text="${todo.personInCharge}"></td>
-      </li>
-    </ul>
-  </div>
+  <div th:substituteby="header/header :: header"></div>
+  <main class="container">
+    <h1>TODO LIST</h1>
+    <div id="todo_form">
+      <h2>Append TODO List</h2>
+      <form action="/" method="post">
+       <div class="input-group">
+         <div class="input-group-prepend">
+           <span class="input-group-text">ToDo</span>
+         </div>
+         <input type="text" class="form-control" name="todo" />
+       </div>
+       <div class="input-group mb-3">
+         <div class="input-group-prepend">
+           <span class="input-group-text">personInCharge</span>
+         </div>
+         <input type="text" class="form-control" name="personInCharge" />
+       </div>
+       <button type="submit" class="btn btn-primary btn-default btn-lg mb-3" >SUBMIT</button>
+      </form>
+    </div>
+    <div id="todo_list">
+      <h2>TODO List</h2>
+      <ul>
+        <!--/*@thymesVar id="todo_list" type="java.util.List"*/-->
+        <li th:each="todo : ${todo_list}">
+          <td th:text="${todo.todo}"></td>
+          <td th:text="${todo.personInCharge}"></td>
+        </li>
+      </ul>
+    </div>
+  </main>
+  <footer>
+
+  </footer>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script th:src="@{/static/bootstrap/js/bootstrap.min.js}"></script>
+  <script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
  </body>
 </html>

@@ -31,13 +31,15 @@
     </div>
     <div id="todo_list">
       <h2>TODO List</h2>
-      <ul>
-        <!--/*@thymesVar id="todo_list" type="java.util.List"*/-->
-        <li th:each="todo : ${todo_list}">
-          <td th:text="${todo.todo}"></td>
-          <td th:text="${todo.personInCharge}"></td>
-        </li>
-      </ul>
+      <div class="row">
+        <ul th:each="todo : ${todo_list}" class="list-group col-md-12">
+          <li class="list-group-item">
+            <span th:text="${todo.id}"></span>
+            <span th:text="${todo.todo}" class="mx-auto"></span>
+            <span th:text="${todo.personInCharge}"></span>
+          </li>
+        </ul>
+      </div>
     </div>
   </main>
   <div th:substituteby="footer/footer :: footer"></div>

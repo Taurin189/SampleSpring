@@ -1,10 +1,33 @@
 <!-- Footer -->
 <footer class="bs-docs-footer">
   <div class="container">
-    <ul>
-      <li><a href="#">GitHub</a></li>
-      <li><a href="#">Twitter</a></li>
-      <li><a href="#">Facebook</a></li>
+    <ul class="list-inline">
+      <li class="list-inline-item">
+        <iframe src="http://ghbtns.com/github-btn.html?user=Taurin189&repo=SampleSpring&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="75" height="20"></iframe>
+      </li>
+      <li class="list-inline-item">
+        <iframe src="https://platform.twitter.com/widgets/tweet_button.html?url=https%3A%2F%2Fdev.twitter.com%2Fweb%2Ftweet-button&via=twitterdev&related=twitterapi%2Ctwitter&text=custom%20share%20text&hashtags=example%2Cdemo" width="61" height="20" title="Twitter Tweet Button" style="border: 0; overflow: hidden;">
+        </iframe>
+      </li>
+      <li class="list-inline-item">
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+        <!-- Your like button code -->
+        <div class="fb-like"
+             data-href="https://github.com/Taurin189/SampleSpring"
+             data-layout="standard"
+             data-action="like"
+             data-show-faces="true">
+        </div>
+      </li>
     </ul>
   </div>
 </footer>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>

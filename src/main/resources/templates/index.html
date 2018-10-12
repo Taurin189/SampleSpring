@@ -11,24 +11,7 @@
   <div th:substituteby="header/header_with_add_button :: header_with_add_button"></div>
   <main class="container">
     <h1>TODO LIST</h1>
-    <div id="todo_form">
-      <h2>Append TODO List</h2>
-      <form action="/" method="post">
-       <div class="input-group">
-         <div class="input-group-prepend">
-           <span class="input-group-text">ToDo</span>
-         </div>
-         <input type="text" class="form-control" name="todo" />
-       </div>
-       <div class="input-group mb-3">
-         <div class="input-group-prepend">
-           <span class="input-group-text">personInCharge</span>
-         </div>
-         <input type="text" class="form-control" name="personInCharge" />
-       </div>
-       <button type="submit" class="btn btn-primary btn-default btn-lg mb-3" >SUBMIT</button>
-      </form>
-    </div>
+
     <div id="todo_list">
       <h2>TODO List</h2>
       <div class="row">
@@ -43,7 +26,7 @@
     </div>
   </main>
   <div th:substituteby="footer/footer :: footer"></div>
-  <!--<div th:substituteby="footer/add_todo_modal :: add_todo_modal"></div>-->
+  <div th:substituteby="footer/add_todo_modal :: add_todo_modal"></div>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>

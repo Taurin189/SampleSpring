@@ -8,7 +8,7 @@
   <link rel="stylesheet" type="text/css" th:href="@{/css/index.css}"></link>
 </head>
  <body>
-  <div th:substituteby="header/header :: header"></div>
+  <div th:substituteby="header/header_with_add_button :: header_with_add_button"></div>
   <main class="container">
     <h1>TODO LIST</h1>
     <div id="todo_form">
@@ -43,6 +43,7 @@
     </div>
   </main>
   <div th:substituteby="footer/footer :: footer"></div>
+  <!--<div th:substituteby="footer/add_todo_modal :: add_todo_modal"></div>-->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>

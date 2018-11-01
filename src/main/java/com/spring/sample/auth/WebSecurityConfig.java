@@ -31,6 +31,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         // 認可の設定
         http.authorizeRequests()
                 .antMatchers("/login", "/login").permitAll()
+                .antMatchers("/sign_up", "/sign_up").permitAll()
                 .anyRequest().authenticated();
 
         // ログイン設定

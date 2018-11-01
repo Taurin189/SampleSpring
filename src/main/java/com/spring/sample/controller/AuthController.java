@@ -1,9 +1,10 @@
 package com.spring.sample.controller;
 
 import com.spring.sample.entity.ToDoEntity;
-//import com.spring.sample.service.UserService;
+import com.spring.sample.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,8 +17,8 @@ import java.util.List;
 @Controller
 @EnableAutoConfiguration
 public class AuthController {
-//    @Autowired
-//    private UserService userService;
+    @Autowired
+    private UserService userService;
 
     @GetMapping("/login")
     public ModelAndView index(
